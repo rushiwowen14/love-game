@@ -39,9 +39,16 @@
 </head>
 <body>
 
-<audio id="xiao" autoplay loop>
-    <source src="xiao.mp3" type="audio/mpeg">
-</audio>
+<audio id="xiao" src="xiao.mp3" loop></audio>
+
+<button onclick="startGame()">开始</button>
+
+<script>
+function startGame() {
+  document.getElementById("xiao").play();
+}
+</script>
+
 
 <div id="story">
     争吵之后，你挂断了萧逸的电话。  
