@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<audio id="bgm" src="xiao.mp3" loop preload="xiao"></audio>
+<audio id="xiao" src="xiao.mp3" loop preload="auto"></audio>
 
 <script>
 document.addEventListener("click", function () {
@@ -47,6 +47,7 @@ document.addEventListener("click", function () {
   music.play().catch(() => {});
 }, { once: true });
 </script>
+
 
 
 
