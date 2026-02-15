@@ -39,15 +39,15 @@
 </head>
 <body>
 
-<audio id="xiao" src="xiao.mp3" loop></audio>
-
-<button onclick="startGame()">开始</button>
+<audio id="bgm" src="xiao.mp3" loop preload="xiao"></audio>
 
 <script>
-function startGame() {
-  document.getElementById("xiao").play();
-}
+document.addEventListener("click", function () {
+  const music = document.getElementById("xiao");
+  music.play().catch(() => {});
+}, { once: true });
 </script>
+
 
 
 <div id="story">
