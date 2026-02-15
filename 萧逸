@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>萧逸 · 楼下的夜</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url("xiao.jpg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding: 80px;
+            background-color: rgba(0,0,0,0.6);
+            background-blend-mode: darken;
+        }
+
+        #story {
+            font-size: 24px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="xiao" autoplay loop>
+    <source src="xiao.mp3" type="audio/mpeg">
+</audio>
+
+<div id="story">
+    争吵之后，你挂断了萧逸的电话。  
+    夜晚很安静，你回到家，情绪却还在翻涌。  
+    手机突然又响了。
+</div>
+
+<div id="choices">
+    <button onclick="answerCall()">接电话</button>
+    <button onclick="ignoreCall()">不接</button>
+</div>
+
+<script>
+
+function answerCall() {
+    document.getElementById("story").innerHTML =
+        "听筒那头传来熟悉的声音。<br><br>" +
+        "萧逸低声说：'对不起……可以往窗外看看吗？'";
+
+    document.getElementById("choices").innerHTML =
+        "<button onclick='lookOutside()'>看</button>" +
+        "<button onclick='dontLook()'>不看</button>";
+}
+
+function ignoreCall() {
+    document.getElementById("story").innerHTML =
+        "电话停止了。<br><br>" +
+        "你看着黑掉的屏幕，心里更空了一点。";
+
+    document.getElementById("choices").innerHTML =
+        "<button onclick='restart()'>重新开始</button>";
+}
+
+function lookOutside() {
+    document.getElementById("story").innerHTML =
+        "你走到窗边。<br><br>" +
+        "楼下路灯下，他站在那里。<br>" +
+        "电话里传来他有些试探的声音：<br><br>" +
+        "'愿意下楼让我见见你吗？'";
+
+    document.getElementById("choices").innerHTML =
+        "<button onclick='goDown()'>下楼</button>" +
+        "<button onclick='stayHome()'>不下楼</button>";
+}
+
+function dontLook() {
+    document.getElementById("story").innerHTML =
+        "你沉默着，没有走向窗边。<br><br>" +
+        "电话那头的呼吸声停顿了一瞬。";
+
+    document.getElementById("choices").innerHTML =
+        "<button onclick='restart()'>重新开始</button>";
+}
+
+function goDown() {
+    document.getElementById("story").innerHTML =
+        "你走到他面前。<br><br>" +
+        "萧逸看着你，声音很轻：'对不起。'<br><br>" +
+        "你问：'为什么道歉？'<br><br>" +
+        "他回答：'因为我不想和你就这么算了。'";
+
+    document.getElementById("choices").innerHTML =
+        "<button onclick='restart()'>重新开始</button>";
+}
+
+function stayHome() {
+    document.getElementById("story").innerHTML =
+        "你没有下楼。<br><br>" +
+        "他在楼下站了很久，直到灯光变冷。";
+
+    document.getElementById("choices").innerHTML =
+        "<button onclick='restart()'>重新开始</button>";
+}
+
+function restart() {
+    location.reload();
+}
+
+</script>
+
+</body>
+</html>
