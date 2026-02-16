@@ -28,18 +28,25 @@
   }
 
   /* 剧情文本 */
-  #story {
-    position: absolute;
-    top: 15%;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: center;
-    z-index: 1;
-  }
+#story {
+  position: absolute;
+  top: 15%;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;               /* 主体文字白色 */
+  font-size: 22px;            /* 放大字体 */
+  font-weight: bold;          /* 加粗 */
+  line-height: 1.8;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 
+    2px 2px 4px rgba(0,0,0,0.7),   /* 黑色阴影 */
+    -2px -2px 4px rgba(0,0,0,0.7),
+    2px -2px 4px rgba(0,0,0,0.7),
+    -2px 2px 4px rgba(0,0,0,0.7);
+}
+
 
   /* 按钮容器 */
   #choices {
